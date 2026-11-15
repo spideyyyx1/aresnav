@@ -33,7 +33,7 @@ export class ApiError extends Error {
 export class ApiClient {
   private baseUrl: string;
 
-  constructor(baseUrl: string = '/api/v1') {
+  constructor(baseUrl: string = (import.meta.env.VITE_API_BASE_URL as string) || '/api/v1') {
     this.baseUrl = baseUrl;
   }
 
